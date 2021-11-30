@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Test site",
+  "main": "index.js",
+  "scripts": {
+    "test": "project_start"
+  },
+  "author": "KoJI6aca",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^9.1.0"
+  }
+}
