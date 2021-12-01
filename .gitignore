@@ -1,0 +1,9 @@
+#Игнорировать папки в cypress, кроме моих тестов в папке integration
+/cypress/*
+!/cypress/integration/FirstTest.spec.js
+
+#Игнорировать папку node_modules
+/node_modules/*
+/cypress.json
+/package-lock.json
+/package.json
