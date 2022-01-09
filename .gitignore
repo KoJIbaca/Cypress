@@ -1,14 +1,15 @@
 #Игнорировать папки в cypress, кроме моих тестов в папке integration
-/cypress/*
+/cypress/integration/*
 !/cypress/integration/01_main_menu_elements.spec.js
 !/cypress/integration/02_service_menu.spec.js
 !/cypress/integration/03_settings_menu.spec.js
-!/cypress/integration/04_searchbox_test_menu.spec.js
+!/cypress/integration/04_searchbox_testg.spec.js
 !/cypress/integration/05_virtual_keyboard_menu.spec.js
 
 
+
 #Игнорировать папку node_modules
-/node_modules/*
-/cypress.json
-/package-lock.json
-/package.json
+
+!/cypress.json
+!/package-lock.json
+!/package.json
