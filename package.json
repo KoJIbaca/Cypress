@@ -4,11 +4,12 @@
   "description": "Test site",
   "main": "index.js",
   "scripts": {
-    "test": "project_start"
+    "test": "project_start",
+    "cyrun": "npx cypress open"
   },
   "author": "KoJI6aca",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^9.1.0"
+  "devDependencies": {
+    "cypress": "^9.2.0"
   }
 }
