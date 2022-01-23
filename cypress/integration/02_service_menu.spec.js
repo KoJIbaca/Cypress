@@ -1,23 +1,30 @@
-describe ('Тестирование выпадающего меню "Настройки"', () => {    
-    beforeEach(() => {
-      cy.visit('https://google.com')
-      cy.get('#gbwa > div > a').click()      
+/// <reference types="Cypress-xpath" />
+/// <reference types = "Cypress-iframe"/>
+import 'cypress-iframe'
 
-      const getIframeDocument = () => {
-        return cy
-          .get('iframe') 
-          .its('0.contentDocument.body').should('not.be.undefined')        
-          .then(cy.wrap)
-      }      
-    });
+beforeEach(() => {
+  cy.visit('https://google.com')
+  cy.get(".gb_A").click()
+  cy.frameLoaded("iframe[role='presentation']")           
+});
+
+describe ('Тестирование выпадающего dropdown-меню "Приложения Google"', () => {    
+    
+    it('Нажатие на сервис "YouTube', () => {
+      cy.iframe().xpath("//span[text()='YouTube']").click() 
+      cy.url().should('include', 'youtube')
+      cy.go(-1)
+    })
 
     it('Нажатие на сервис "Карты', () => {
-      getIframeBody().find('#yDmH0d > c-wiz > div > div > c-wiz > div > div > ul.LVal7b.u4RcUd > li:nth-child(3) > a').should('have.text', 'Try it').click() 
+      cy.iframe().xpath("//span[text()='Карты']").click() 
       cy.url().should('include', '/maps')
-      })
+    })
+    
+    it('Нажатие на сервис "PlayMarket', () => {
+      cy.iframe().xpath("//span[text()='Play']").click() 
+      cy.url().should('include', '/store')
+    }) 
 
-        })        
-      //});
-    //})
-  //})
-//})
+})        
+  
